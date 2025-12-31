@@ -1,13 +1,31 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { Home, Gallery, Landing, Login, Signup, ImagePage } from "./pages/index";
+import ProtectedRoute from "./components/ProtectedRoute";
+import HomeLayout from "./components/HomeLayout";
 
-function App() {
-  
-
+const App = () => {
   return (
-    <>
-      <h1>hello</h1>
-    </>
+    <Routes>
+      {/* Public */}
+      <Route path="/" element={<Landing />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+      {/* Protected */}
+      <Route
+        path="/home"
+        element={
+          <ProtectedRoute>
+            <HomeLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<Home />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="gallery/:id" element={<ImagePage />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
