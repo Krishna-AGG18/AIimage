@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const items = [
@@ -18,18 +19,18 @@ const Landing = () => {
       <Navbar />
       <div className="min-h-screen p-2 bg-white text-[#1D1C1B]">
         <div className="flex justify-center items-center text-center px-4 pt-8">
-          <h1 class=" md:text-[48px] sm:text-[36px] text-[24px] text-center font-semibold">
+          <h1 class=" md:text-[48px] sm:text-[36px] text-[24px] text-center font-semibold  bebas-neue">
             Create stunning AI images in seconds
           </h1>
         </div>
         <div className="flex justify-center items-center text-center px-4">
-          <h2 class="md:text-[36px] sm:text-[24px] text-[16px] text-center">
+          <h2 class="md:text-[36px] sm:text-[24px] text-[16px] text-center  bebas-neue">
             Turn your ideas into visuals using AI
           </h2>
         </div>
 
         {/* horizontal scroll */}
-        <div className="overflow-hidden w-full py-8 ">
+        <div className="overflow-hidden w-full py-4 sm:py-8 ">
           <div
             className="flex w-max 
             [animation:scroll_20s_linear_infinite]"
@@ -102,55 +103,136 @@ const Landing = () => {
         {/* CTA */}
         <div className="w-full py-2">
           <div className="w-full flex justify-center items-center gap-4">
-            <button className="bg-[#1d1b1c] py-2 px-4 flex justify-center items-center text-[12px] text-white rounded-2xl">
-              ✨ Generate Images
-            </button>
-            <button className=" border-2 border-[#1d1b1c] py-2 px-4 flex justify-center items-center font-semibold text-[12px] text-[#1d1b1c] rounded-2xl">
-              Login Now
-            </button>
+            <Link to="/home">
+              <button className="bg-[#1d1b1c] py-2 px-4 flex justify-center items-center text-[12px] text-white rounded-2xl">
+                ✨ Generate Images
+              </button>
+            </Link>
+            <Link to="/login">
+              <button className=" cursor-pointer border-2 border-[#1d1b1c] py-2 px-4 flex justify-center items-center font-semibold text-[12px] text-[#1d1b1c] rounded-2xl">
+                Login Now
+              </button>
+            </Link>
           </div>
         </div>
 
-        {/* How we use it  */}
-        {/* How we use it */}
-        <section className="w-full bg-white py-16">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-12 text-gray-900">
+        {/* How it works */}
+        <section className="w-full bg-white  py-8 sm:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            {/* Heading */}
+            <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#1d1b1c] mb-10 bebas-neue">
               How it works
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
-              {/* Step 1 */}
-              <div className="flex flex-col items-center text-center gap-4 p-6 rounded-xl hover:shadow-md transition bg-[#ebebeb]">
-                <p className="text-4xl">1️⃣</p>
-                <p className="text-lg font-medium text-gray-900">
-                  Enter a prompt
-                </p>
-                <p className="text-gray-600 max-w-xs">
-                  Describe what you imagine in simple words
-                </p>
+            {/* Wrapper */}
+            <div className="overflow-hidden sm:overflow-visible">
+              <div
+                className="
+          flex gap-4 sm:grid sm:grid-cols-3 sm:gap-8
+          max-sm:w-max
+          max-sm:[animation:scroll_18s_linear_infinite]
+        "
+              >
+                {/* Step 1 */}
+                <div
+                  className="
+          shrink-0
+          w-56 sm:w-auto
+          bg-[#f2f2f2]
+          rounded-xl
+          p-4 sm:p-6
+          text-center
+          transition-all duration-300
+          hover:shadow-lg hover:-translate-y-1
+        "
+                >
+                  <div className="text-3xl sm:text-4xl mb-3">📝</div>
+                  <h3 className="text-sm sm:text-lg font-semibold mb-1">
+                    Enter a prompt
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Describe what you imagine using simple words.
+                  </p>
+                </div>
+
+                {/* Step 2 */}
+                <div
+                  className="
+          shrink-0
+          w-56 sm:w-auto
+          bg-[#f2f2f2]
+          rounded-xl
+          p-4 sm:p-6
+          text-center
+          transition-all duration-300
+          hover:shadow-lg hover:-translate-y-1
+        "
+                >
+                  <div className="text-3xl sm:text-4xl mb-3">🤖</div>
+                  <h3 className="text-sm sm:text-lg font-semibold mb-1">
+                    AI creates image
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Our AI converts your prompt into visuals.
+                  </p>
+                </div>
+
+                {/* Step 3 */}
+                <div
+                  className="
+          shrink-0
+          w-56 sm:w-auto
+          bg-[#f2f2f2]
+          rounded-xl
+          p-4 sm:p-6
+          text-center
+          transition-all duration-300
+          hover:shadow-lg hover:-translate-y-1
+        "
+                >
+                  <div className="text-3xl sm:text-4xl mb-3">⬇️</div>
+                  <h3 className="text-sm sm:text-lg font-semibold mb-1">
+                    Download or save
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Download instantly or save after login.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why choose us */}
+        <section className="w-full bg-[#fafafa] py-8 sm:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12 bebas-neue">
+              Why choose ARTIFY AI?
+            </h2>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+              <div className="bg-white p-4 rounded-xl shadow-sm">
+                <p className="text-2xl mb-2">⚡</p>
+                <p className="text-sm font-semibold">Fast</p>
+                <p className="text-xs text-gray-600">Images in seconds</p>
               </div>
 
-              {/* Step 2 */}
-              <div className="flex flex-col items-center text-center gap-4 p-6 rounded-xl hover:shadow-md transition bg-[#ebebeb]">
-                <p className="text-4xl">2️⃣</p>
-                <p className="text-lg font-medium text-gray-900">
-                  AI generates the image
-                </p>
-                <p className="text-gray-600 max-w-xs">
-                  Our AI understands your prompt and creates visuals
-                </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm">
+                <p className="text-2xl mb-2">🎨</p>
+                <p className="text-sm font-semibold">Creative</p>
+                <p className="text-xs text-gray-600">Unique visuals</p>
               </div>
 
-              {/* Step 3 */}
-              <div className="flex flex-col items-center text-center gap-4 p-6 rounded-xl hover:shadow-md transition bg-[#ebebeb]">
-                <p className="text-4xl">3️⃣</p>
-                <p className="text-lg font-medium text-gray-900">
-                  Download or save
-                </p>
-                <p className="text-gray-600 max-w-xs">
-                  Access your images anytime after login
-                </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm">
+                <p className="text-2xl mb-2">🔐</p>
+                <p className="text-sm font-semibold">Secure</p>
+                <p className="text-xs text-gray-600">Private images</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm">
+                <p className="text-2xl mb-2">💸</p>
+                <p className="text-sm font-semibold">Free</p>
+                <p className="text-xs text-gray-600">Start without cost</p>
               </div>
             </div>
           </div>

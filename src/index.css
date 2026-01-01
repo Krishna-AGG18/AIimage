@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Changa+One:ital@0;1&display=swap');
 @import "tailwindcss";
 
+.bebas-neue{
+  font-family: 'Bebas Neue', sans-serif;
+}
+.changa-one {
+  font-family: "Changa One", sans-serif;
+}
 @keyframes scroll {
   from {
     transform: translateX(0);
